@@ -7,12 +7,15 @@ form.addEventListener("submit", (event) => {
   const { dividend, divider } = Object.fromEntries(entries);
   // result.innerText = Math.floor(dividend / divider);
 
-  
+  const errorMessages = {
+    NaN: 'Division not performed. Both values are required in inputs. Try again',
+    isZero: 'Division not performed. Invalid number provided. Try again'
+  }
 
   if(isNaN(dividend) || isNaN(divider) ) {
-    result.innerText = 'Division not performed. Both values are required in inputs. Try again'
+    result.innerText = errorMessages.NaN
   }else if (divider == 0){
-    result.innerText = 'Division not performed. Invalid number provided. Try again'
+    result.innerText = errorMessages.isZero
   }
   else {
     result.innerText = Math.floor(dividend / divider);
