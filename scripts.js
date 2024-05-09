@@ -13,12 +13,15 @@ form.addEventListener("submit", (event) => {
     criticalError: 'Something critical went wrong. Please reload the page'
   }
   
-  const checkDevidend = 'YOLO';
-  const checkDivider = '+++';
+  // const checkDividend = /^[a-zA-Z!@#\$%\^\&*\)\(+=._-]+$/g;
+  // const checkDivider = /^[a-zA-Z!@#\$%\^\&*\)\(+=._-]+$/g;
+  const checkDividend = /^\W/;
+  const checkDivider = /^\W/;
+
 
 
   //CHECK IF CORRECT INPUT IS ENTERED
-  if (dividend === checkDevidend && divider === checkDivider) {
+  if (dividend.match(checkDividend) || divider.match(checkDivider)) {
     const criticalErrorDiv = document.createElement('div')
     criticalErrorDiv.classList.add('critical-error')
 
@@ -26,13 +29,15 @@ form.addEventListener("submit", (event) => {
     console.error('Something critical went wrong. Please reload the page')
     document.body.appendChild(criticalErrorDiv)
 
-  }else if(isNaN(dividend) || isNaN(divider) ) {
+  }
+  else if(dividend ==='' || divider === '' ) {
     result.innerText = errorMessages.NaN
   }
   else if (divider == 0){//=== gives me infinity
     result.innerText = errorMessages.isZero
     console.error(errorMessages.isZero)
   }
+  
   else {
     result.innerText = Math.floor(dividend / divider);
   }
