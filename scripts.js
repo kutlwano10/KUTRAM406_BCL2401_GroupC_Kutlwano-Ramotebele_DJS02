@@ -13,10 +13,10 @@ form.addEventListener("submit", (event) => {
     criticalError: 'Something critical went wrong. Please reload the page'
   }
   
-  // const checkDividend = /^[a-zA-Z!@#\$%\^\&*\)\(+=._-]+$/g;
-  // const checkDivider = /^[a-zA-Z!@#\$%\^\&*\)\(+=._-]+$/g;
-  const checkDividend = /^\W/;
-  const checkDivider = /^\W/;
+  const checkDividend = /^[a-zA-Z!@#\$%\^\&*\)\(+=._-]+$/g;
+  const checkDivider = /^[a-zA-Z!@#\$%\^\&*\)\(+=._-]+$/g;
+  // const checkDividend = /^\W_/g;
+  // const checkDivider = /^\W_/g;
 
 
 
