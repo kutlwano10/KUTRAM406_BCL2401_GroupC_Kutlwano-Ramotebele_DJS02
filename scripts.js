@@ -22,7 +22,8 @@ form.addEventListener("submit", (event) => {
     const criticalErrorDiv = document.createElement('div')
     criticalErrorDiv.classList.add('critical-error')
 
-    criticalErrorDiv.innerHTML = `<p>${errorMessages.criticalError}</p>`
+    criticalErrorDiv.innerHTML = `<p>${errorMessages.criticalError}</p>`;
+    console.error('Something critical went wrong. Please reload the page')
     document.body.appendChild(criticalErrorDiv)
 
   }else if(isNaN(dividend) || isNaN(divider) ) {
